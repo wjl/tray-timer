@@ -101,8 +101,6 @@ Tray_Timer::Tray_Timer() :
 
 Tray_Timer::~Tray_Timer() {}
 
-#define SLOT_DEBUG qDebug(__FUNCTION__)
-
 void Tray_Timer::on_tick() {
 
   // Compute completion
