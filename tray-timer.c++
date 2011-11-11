@@ -169,10 +169,11 @@ void Tray_Timer::on_menu_start() {
 
   // Get the timer duration from the user
   QTime duration;
+  QString text;
   do {
 
     bool accepted;
-    auto text = QInputDialog::getText (
+    text = QInputDialog::getText (
       detail->icon.contextMenu(),
       "Tray Timer",
       "Duration (hh:mm:ss)",
@@ -187,6 +188,9 @@ void Tray_Timer::on_menu_start() {
     duration = QTime::fromString(text);
 
   } while (!duration.isValid());
+
+  // Save the current text entry to use next time
+  detail->last_text = text;
 
   // Start the timer
   detail->duration =
