@@ -1,0 +1,5 @@
+*.o
+.*.swp
+Makefile
+moc_*.cpp
+tray-timer
