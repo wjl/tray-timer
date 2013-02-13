@@ -7,7 +7,7 @@ struct Tray_Timer::Detail {
 
 	// Main timer
 	double duration;
-	bool running;    // gcc 4.7 = false;
+	bool running = false;
 	QTime timer;
 
 	// Message
@@ -93,7 +93,6 @@ Tray_Timer::Tray_Timer() :
 	connect(&message_timer, SIGNAL(timeout()), this, SLOT(on_message_timeout()));
 
 	// Final setup
-	detail->running = false; // gcc 4.7 remove
 	detail->timer.start();
 	on_tick();
 	icon.show();
