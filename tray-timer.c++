@@ -160,8 +160,8 @@ void Tray_Timer::on_message_clicked() {
 void Tray_Timer::on_message_timeout() {
   detail->icon.showMessage (
     "Tray Timer", "Timer Expired",
-    QSystemTrayIcon::Information, 5000);
-  detail->message_timer.start(10000);
+    QSystemTrayIcon::Information, 1000);
+  detail->message_timer.start(2000);
 }
 
 void Tray_Timer::on_menu_start() {
