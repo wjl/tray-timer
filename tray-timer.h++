@@ -5,21 +5,21 @@
 #include <QtGui>
 
 struct Tray_Timer : public QObject {
-  Tray_Timer();
-  ~Tray_Timer();
+	Tray_Timer();
+	~Tray_Timer();
 
-  private slots:
-  void on_tick();
-  void on_icon_clicked(QSystemTrayIcon::ActivationReason);
-  void on_message_clicked();
-  void on_message_timeout();
-  void on_menu_start();
-  void on_menu_stop();
+	private slots:
+	void on_tick();
+	void on_icon_clicked(QSystemTrayIcon::ActivationReason);
+	void on_message_clicked();
+	void on_message_timeout();
+	void on_menu_start();
+	void on_menu_stop();
 
-  private:
-  struct Detail;
-  std::unique_ptr<Detail> detail;
-  Q_OBJECT
+	private:
+	struct Detail;
+	std::unique_ptr<Detail> detail;
+	Q_OBJECT
 };
 
 #endif
