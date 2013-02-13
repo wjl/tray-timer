@@ -1,0 +1,9 @@
+Tray Timer
+==========
+
+Tray Timer is simple desktop independent tray countdown timer. Several desktop
+environments have a similar plugin for their panel, but none of them can be
+run easily without being tied to a certain desktop environment's panel.
+
+The model of tray timer is just a simple countdown timer. You set it, and it
+notifies you when it's done.
