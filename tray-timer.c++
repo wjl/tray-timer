@@ -113,7 +113,7 @@ void Tray_Timer::on_tick() {
 
 	// Update tooltip
 	if (detail->running && remaining > 0) {
-		auto remaining_time = QTime().addMSecs(remaining * 1e3);
+		auto remaining_time = QTime(0,0).addMSecs(remaining * 1e3);
 		detail->icon.setToolTip (
 			QString("Tray Timer\n%1:%2:%3 remaining")
 			.arg(remaining_time.hour()  , 2, 10, QChar('0'))
