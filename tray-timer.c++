@@ -95,6 +95,10 @@ Tray_Timer::Tray_Timer() :
 	// Final setup
 	detail->timer.start();
 	on_tick();
+
+	if (!QSystemTrayIcon::isSystemTrayAvailable()) {
+		throw std::runtime_error("System tray is not available!");
+	}
 	icon.show();
 }
 
