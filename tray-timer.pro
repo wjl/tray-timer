@@ -1,4 +1,4 @@
-QT       += core gui widgets
+QT       += core gui
 CONFIG   += debug
 TARGET    = tray-timer
 TEMPLATE  = app

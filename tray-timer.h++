@@ -2,7 +2,7 @@
 #define __tray_timer__header__
 
 #include <memory>
-#include <QtWidgets>
+#include <QtGui>
 
 struct Tray_Timer : public QObject {
 	Tray_Timer();
