@@ -4,8 +4,11 @@ on:
     branches:
       - master
 jobs:
-  build-linux:
-    runs-on: ubuntu-latest
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -17,20 +20,5 @@ jobs:
           pyinstaller --onefile --noconsole tray-timer.py
       - uses: actions/upload-artifact@v4
         with:
-          name: tray-timer.linux.x86_64
-          path: dist/*
-  build-windows:
-    runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-          cache: "pip"
-      - run: pip install -r requirements.txt
-      - run: |
-          pyinstaller --onefile --noconsole tray-timer.py
-      - uses: actions/upload-artifact@v4
-        with:
-          name: tray-timer.windows.x86_64
+          name: tray-timer.${{ matrix.os }}
           path: dist/*
