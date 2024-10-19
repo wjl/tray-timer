@@ -1,0 +1,23 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+      - run: |
+          ./build.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tray-timer.linux.x86_64
+          path: dist/tray-timer
