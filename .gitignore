@@ -1,3 +1,9 @@
+# PyEnv version selection.
+.python-version
+
+# Virtual environment.
+venv/
+
 # PyInstaller output.
 *.spec
 build/
