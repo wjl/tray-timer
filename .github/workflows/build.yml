@@ -32,7 +32,7 @@ jobs:
           mv artifacts/build-ubuntu-latest/dist/tray-timer      tray-timer.linux.x86_64
           mv artifacts/build-windows-latest/dist/tray-timer.exe tray-timer.exe
       - uses: softprops/action-gh-release@v2
-        if: startsWith(github.ref, "refs/tags/")
+        if: startsWith(github.ref, 'refs/tags/')
         with:
           files: |
             README.md
