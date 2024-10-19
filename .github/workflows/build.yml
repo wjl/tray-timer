@@ -1,14 +1,11 @@
 name: Build
-
 on:
   push:
     branches:
       - master
-
 jobs:
-  build:
-    runs-on: ubuntu-20.04
-
+  build-linux:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -17,7 +14,23 @@ jobs:
           cache: "pip"
       - run: |
           ./build.sh
+          mv dist/tray-timer dist/tray-timer.linux.x86_64
       - uses: actions/upload-artifact@v4
         with:
           name: tray-timer.linux.x86_64
-          path: dist/tray-timer
+          path: dist/*
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+      - run: |
+          ./build.sh
+          mv dist/tray-timer dist/tray-timer.windows.x86_64
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tray-timer.windows.x86_64
+          path: dist/*
