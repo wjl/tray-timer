@@ -25,7 +25,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/download-artifact@v4
-        path: artifacts
+        with:
+          path: artifacts
       - run: |
           ls -lR artifacts
           mv artifacts/build-ubuntu-latest/dist/tray-timer      tray-timer.linux.x86_64
