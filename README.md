@@ -8,3 +8,4 @@ The model of tray timer is just a simple countdown timer.
 You set it, and it notifies you when it's done.
 
 [![build](https://github.com/wjl/tray-timer/actions/workflows/build.yml/badge.svg)](https://github.com/wjl/tray-timer/actions/workflows/build.yml)
+[![release](https://github.com/wjl/tray-timer/actions/workflows/release.yml/badge.svg)](https://github.com/wjl/tray-timer/actions/workflows/release.yml)
