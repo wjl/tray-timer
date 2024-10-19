@@ -2,11 +2,7 @@
 set -e -u
 
 # Install dependencies.
-pip install --upgrade pip
-pip install \
-	PyQt6 \
-	pyinstaller \
-	;
+pip install -r requirements.txt
 
 # Build a single binary.
 pyinstaller --onefile --noconsole tray-timer.py
